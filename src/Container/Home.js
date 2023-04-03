@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Set_data } from '../Action'
+import { Set_data } from '../Store/Action'
 import '../App.css'
 
 class Home extends Component {
     render() {
         console.log('users', this.props)
-        // let user = {name : "umair"}
+        // let user = {name : "umair",email: 'umair@yahoo.com'}
         return (
             <div className='main'>
-                {this.props.user.map((v, i) => {
+                {this.props.users.map((v, i) => {
                     return <h1 key={i}>{v.name}<br />{v.email}</h1>
                 })}
                 <button onClick={() => this.props.Set_data()}>Set data</button>
@@ -19,7 +19,7 @@ class Home extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    user: state.users
+    users: state.users
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -11,14 +11,16 @@ const INITAL_STATE = {
     ]
 }
 
-export default (state = INITAL_STATE, action) => {
+const Reducer = (state = INITAL_STATE, action) => {
     switch (action.type) {
         case "SETDATA":
             return ({
                 ...state,
                 users: [...state.users, action.payload]
-                // users : [...state.users,action.data]
+                // users : [...state.users,action.payload]
             })
+        default:
     }
     return state;
 }
+export default Reducer

@@ -5,7 +5,7 @@ const Set_data = () => {
         dispatch({
             type: "SETDATA",
             payload: { name: "haider", email: "haider@yahoo.com" }
-            // data : data
+            // payload : data
         })
     }
 }
